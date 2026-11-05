@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Formulario de contacto</title>
+
+  <meta name="description" content="Formulario de contacto para enviar solicitudes y documentos.">
+
+  <link rel="stylesheet" href="/estilos.css">
+</head>
+
+<body>
+
+  <main class="contenedor">
+
+    <section class="formulario-card">
+
+      <div class="encabezado">
+        <div class="icono-correo">✉</div>
+
+        <h1>Formulario de contacto</h1>
+
+        <p>
+          Completa tus datos y envíanos tu solicitud.
+          Puedes adjuntar documentos o imágenes.
+        </p>
+      </div>
+
+      <form id="formulario" enctype="multipart/form-data">
+
+        <div class="campo">
+          <label for="nombre">Nombre completo *</label>
+
+          <input
+            type="text"
+            id="nombre"
+            name="nombre"
+            placeholder="Escribe tu nombre completo"
+            maxlength="100"
+            required
+          >
+        </div>
+
+        <div class="campo">
+          <label for="correo">Correo electrónico *</label>
+
+          <input
+            type="email"
+            id="correo"
+            name="correo"
+            placeholder="ejemplo@correo.com"
+            maxlength="150"
+            required
+          >
+        </div>
+
+        <div class="campo">
+          <label for="telefono">Teléfono</label>
+
+          <input
+            type="tel"
+            id="telefono"
+            name="telefono"
+            placeholder="Tu número de contacto"
+            maxlength="30"
+          >
+        </div>
+
+        <div class="campo">
+          <label for="mensaje">Mensaje *</label>
+
+          <textarea
+            id="mensaje"
+            name="mensaje"
+            rows="5"
+            maxlength="3000"
+            placeholder="Escribe aquí tu solicitud..."
+            required
+          ></textarea>
+        </div>
+
+        <div class="campo">
+          <label for="archivos">Adjuntar documentos</label>
+
+          <div class="zona-archivos">
+
+            <div class="icono-subida">↑</div>
+
+            <p class="texto-subida">
+              Selecciona tus archivos
+            </p>
+
+            <p class="formatos">
+              PDF, JPG, JPEG, PNG y WEBP
+            </p>
+
+            <input
+              type="file"
+              id="archivos"
+              name="archivos"
+              accept=".pdf,.jpg,.jpeg,.png,.webp"
+              multiple
+            >
+
+          </div>
+
+          <p class="ayuda">
+            Máximo 5 archivos y 3 MB en total.
+          </p>
+
+          <div id="lista-archivos"></div>
+        </div>
+
+        <button type="submit" id="btnEnviar">
+          Enviar formulario
+        </button>
+
+        <div
+          id="estado"
+          class="estado"
+          role="status"
+          aria-live="polite"
+        ></div>
+
+        <p class="nota">
+          Los datos proporcionados serán utilizados
+          únicamente para atender tu solicitud.
+        </p>
+
+      </form>
+
+    </section>
+
+    <footer>
+      Formulario de contacto
+    </footer>
+
+  </main>
+
+  <script src="/script.js" defer></script>
+
+</body>
+</html>
