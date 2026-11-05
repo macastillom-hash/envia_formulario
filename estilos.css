@@ -1,0 +1,301 @@
+
+/* =================================
+   CONFIGURACIÓN GENERAL
+================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f1f5f9;
+  color: #1e293b;
+  min-height: 100vh;
+}
+
+.contenedor {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+/* =================================
+   TARJETA DEL FORMULARIO
+================================= */
+
+.formulario-card {
+  width: 100%;
+  max-width: 620px;
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 18px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.07);
+}
+
+/* =================================
+   ENCABEZADO
+================================= */
+
+.encabezado {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.icono-correo {
+  width: 65px;
+  height: 65px;
+  margin: 0 auto 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e8f1ff;
+  color: #2563eb;
+  border-radius: 50%;
+  font-size: 32px;
+}
+
+.encabezado h1 {
+  font-size: 27px;
+  color: #172554;
+  margin-bottom: 12px;
+}
+
+.encabezado p {
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* =================================
+   CAMPOS DEL FORMULARIO
+================================= */
+
+.campo {
+  margin-bottom: 22px;
+}
+
+.campo label {
+  display: block;
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 9px;
+  color: #334155;
+}
+
+.campo input,
+.campo textarea {
+  width: 100%;
+  padding: 14px 15px;
+  border: 1px solid #cbd5e1;
+  border-radius: 9px;
+  font-size: 14px;
+  color: #1e293b;
+  background: #ffffff;
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.campo input::placeholder,
+.campo textarea::placeholder {
+  color: #94a3b8;
+}
+
+.campo textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* =================================
+   ZONA PARA ADJUNTAR ARCHIVOS
+================================= */
+
+.zona-archivos {
+  position: relative;
+  border: 2px dashed #93c5fd;
+  border-radius: 12px;
+  padding: 28px 15px;
+  text-align: center;
+  background: #f8fbff;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.zona-archivos:hover {
+  border-color: #2563eb;
+  background: #eff6ff;
+}
+
+.icono-subida {
+  font-size: 35px;
+  color: #2563eb;
+  margin-bottom: 8px;
+}
+
+.texto-subida {
+  font-size: 15px;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 6px;
+}
+
+.formatos {
+  font-size: 12px;
+  color: #64748b;
+}
+
+.zona-archivos input[type="file"] {
+  display: block;
+  margin-top: 15px;
+  width: 100%;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.ayuda {
+  color: #64748b;
+  font-size: 12px;
+  margin-top: 9px;
+}
+
+/* =================================
+   LISTA DE ARCHIVOS
+================================= */
+
+#lista-archivos {
+  margin-top: 12px;
+}
+
+.archivo-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px;
+  margin-bottom: 8px;
+  background: #f1f5f9;
+  border-radius: 8px;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+.archivo-item span {
+  flex: 1;
+}
+
+.archivo-item strong {
+  color: #2563eb;
+}
+
+/* =================================
+   BOTÓN DE ENVÍO
+================================= */
+
+#btnEnviar {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 9px;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#btnEnviar:hover {
+  background: #1d4ed8;
+}
+
+#btnEnviar:disabled {
+  background: #94a3b8;
+  cursor: not-allowed;
+}
+
+/* =================================
+   MENSAJES DE ESTADO
+================================= */
+
+.estado {
+  display: none;
+  padding: 13px;
+  margin-top: 18px;
+  border-radius: 8px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.estado.exito {
+  display: block;
+  color: #166534;
+  background: #dcfce7;
+}
+
+.estado.error {
+  display: block;
+  color: #991b1b;
+  background: #fee2e2;
+}
+
+.estado.info {
+  display: block;
+  color: #1e40af;
+  background: #dbeafe;
+}
+
+/* =================================
+   NOTA Y PIE DE PÁGINA
+================================= */
+
+.nota {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 11px;
+  line-height: 1.6;
+  color: #94a3b8;
+}
+
+footer {
+  margin-top: 25px;
+  color: #94a3b8;
+  font-size: 12px;
+  text-align: center;
+}
+
+/* =================================
+   DISEÑO PARA CELULARES
+================================= */
+
+@media (max-width: 600px) {
+
+  .contenedor {
+    padding: 20px 12px;
+  }
+
+  .formulario-card {
+    padding: 25px 18px;
+    border-radius: 13px;
+  }
+
+  .encabezado h1 {
+    font-size: 23px;
+  }
+
+  .campo input,
+  .campo textarea {
+    font-size: 16px;
+  }
+
+}
